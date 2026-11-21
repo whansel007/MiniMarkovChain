@@ -1,8 +1,9 @@
 import random
 from dict_builder import build_next_character_dict
 
+INPUT_FILE = "data.txt"
 
-character_dict = build_next_character_dict("data.txt")
+character_dict = build_next_character_dict(INPUT_FILE)
 
 def markov_chain(next_dict : dict, max:int, min : int = 3, prev : int = 3) -> str:
     start_options_list = list(next_dict.keys())    
