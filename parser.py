@@ -19,7 +19,11 @@ with open("list.txt", "r", encoding="utf-8") as file:
                     if c in ",/":
                         word_string += " "
                     else:
-                        word_string += c
+                        # For this case we only want latin alphabets
+                        if c in "ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ":
+                            word_string += c.lower()
+                        else:
+                            word_string += ""
             print(word_string)
             
             words_list = word_string.split(" ")
